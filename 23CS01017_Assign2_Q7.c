@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    int tax_per = 8;
-    float mcost, tip_per;
+    float mcost, tip_per, tax_per;
     printf("Enter the Meal Price: ");
     scanf("%f", &mcost);
     printf("Enter the Tip given: ");
     scanf("%f", &tip_per);
-    int t_amt = mcost + (tip_per * mcost) / 100 + (tax_per * mcost) / 100;
-    printf("Total cost of Meal: %d", t_amt);
+    printf("Enter the Tax applied: ");
+    scanf("%f", &tax_per);
+    float t_amt = mcost + (tip_per * mcost) / 100 + (tax_per * mcost) / 100;
+    printf("Total cost of Meal: %.0lf", round(t_amt));
     return 0;
 }
